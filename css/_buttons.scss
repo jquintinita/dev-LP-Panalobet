@@ -33,4 +33,12 @@
             color: var(--orange);
         }
     }
+    &.blue-sky{
+        background-color: var(--blue-sky);
+        border: 2px solid var(--blue-sky);
+        &:hover{
+            color: var(--blue-sky);
+            background-color: #fff;
+        }
+    }
 }

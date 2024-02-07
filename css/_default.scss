@@ -90,6 +90,7 @@ h3{
                 align-items: center;
                 gap: 0.3%;
                 padding: 10px 20px;
+                
                 .step-no{
                     flex: 0 1 75px;
                     font-size: 80px;
@@ -103,6 +104,29 @@ h3{
                             margin: 0 !important;
                         }
                     }
+                }
+                @media screen and (max-width: 980px) {
+                    flex-direction: row;
+                    align-content: baseline;
+                    .step-no{
+                        flex: 0 100%;
+                    }
+                    .step-copy{
+                        text-align: center;
+                    }
+
+                }
+                @media screen and (max-width: 480px) {
+                    flex-direction: row;
+                    flex: 0 100%;
+                    align-content: baseline;
+                    .step-no{
+                        flex: 0 1 75px;
+                    }
+                    .step-copy{
+                        text-align: left;
+                    }
+
                 }
             }
         }
@@ -118,38 +142,87 @@ h3{
     background-position:  center;
     background-size: cover;
     .games-gallery{
-        margin: 40px auto;
-        display: grid; 
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 30px auto;
         gap: 10px;
-        img{
-            max-width: 100%;
-            height: 100%;
-            width: auto;
-            object-fit: cover;
-            transition: all 200ms linear;
-        }
-        div{
+        justify-content: center;
+        > div{
+            flex: 0 30%;
             position: relative;
             border-radius: 10px;
             overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 200ms linear;
+            height: 180px;
+            @media screen and (max-width: 520px) {
+                flex: 0 47%;
+                height: 150px;
+                &:first-child{
+                    flex: 0 100%;
+                    height: 300px;
+                }
+            }
+            img{
+                max-width: 100%;
+                height: 100%;
+                width: auto;
+                object-fit: cover;
+                transition: all 200ms linear;
+            }
             &:hover{
                 cursor: pointer;
+                border: 2px solid var(--blue-sky);
                 img{
                     height: 105%;
+                    opacity: 0.8;
+                   
                 }
             }
         }
-        div:first-child {
-            grid-row-start: 1;
-            grid-column-start: 1;
-            grid-row-end: 3;
-            grid-column-end: 3;
-            position: relative;
-            overflow: hidden;
-         }
-        
-        
+    }
+    @media screen and (min-width: 981px) {
+        .games-gallery{
+            margin: 40px auto;
+            display: grid; 
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            img{
+                max-width: 100%;
+                height: 100%;
+                width: auto;
+                object-fit: cover;
+                transition: all 200ms linear;
+            }
+            div{
+                position: relative;
+                border-radius: 10px;
+                overflow: hidden;
+                border: 2px solid transparent;
+                transition: all 200ms linear;
+                height: unset;
+                &:hover{
+                    cursor: pointer;
+                    border: 2px solid var(--blue-sky);
+                    img{
+                        height: 105%;
+                        opacity: 0.8;
+                       
+                    }
+                }
+            }
+            .games-box:first-child {
+                grid-row-start: 1;
+                grid-column-start: 1;
+                grid-row-end: 3;
+                grid-column-end: 3;
+                position: relative;
+                overflow: hidden;
+                display: inline;
+             }
+            
+            
+        }
     }
 }

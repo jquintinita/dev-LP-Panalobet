@@ -47,5 +47,34 @@
         .swiper-button-prev{
             left: 10px;
         }
+        @media screen and (max-width: 980px) {
+            padding: 0 20px;
+            .hero-image{
+                min-height: 220px;
+                position: relative;
+                overflow: hidden;
+                border-radius: 30px;
+                img{
+                    height: 100%;
+                    width: auto;
+                    max-width: unset;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%) ;
+                    box-shadow:0 0 11px 58px rgb(0 37 166 / 45%);
+                }
+            }
+            .swiper-slide-prev{
+                img{
+                    transform: scale(0.9) translate(-59%,-53%);
+                }
+            }
+            .swiper-slide-next{
+                img{
+                    transform: scale(0.9) translate(-52%,-53%);
+                }
+            }
+        }
     }
 }
