@@ -18,6 +18,7 @@
 
 body {
   background-color: var(--blue);
+  color: #fff;
 }
 
 .container {
@@ -26,13 +27,139 @@ body {
   margin: 0 auto;
 }
 
+p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+p:last-of-type {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: clamp(2.875rem, 2.2917rem + 1.2153vw, 3.75rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 1.5833rem + 0.8681vw, 2.625rem);
+}
+
+h3 {
+  font-size: clamp(1.875rem, 1.625rem + 0.5208vw, 2.25rem);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-yellow {
+  color: var(--yellow);
+}
+
+.title-headline {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.title-headline::before {
+  width: 20px;
+  height: 48px;
+  content: "";
+  display: inline-block;
+  background-color: var(--blue-sky);
+}
+.title-headline.sunflower:before {
+  background-color: var(--sunflower);
+}
+
+.intro-section {
+  padding: 40px 0;
+}
+.intro-section .intro-box {
+  width: 100%;
+  margin: 30px auto;
+  background-image: linear-gradient(0deg, rgba(189, 0, 255, 0.8) 0%, rgba(0, 133, 255, 0.8) 100%);
+  border-radius: 30px;
+  padding: 30px;
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+}
+.intro-section .intro-box .steps-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.intro-section .intro-box .steps-box .step {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 1 33%;
+  align-items: center;
+  gap: 0.3%;
+  padding: 10px 20px;
+}
+.intro-section .intro-box .steps-box .step .step-no {
+  flex: 0 1 75px;
+  font-size: 80px;
+  font-weight: 800;
+}
+.intro-section .intro-box .steps-box .step .step-copy {
+  flex: 1;
+  text-align: left;
+}
+.intro-section .intro-box .steps-box .step .step-copy p:last-of-type {
+  margin: 0 !important;
+}
+
+.games-section {
+  padding: 40px 0;
+  background-image: url(/images/wave-pattern.png);
+  background-position: center;
+  background-size: cover;
+}
+.games-section .games-gallery {
+  margin: 40px auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+.games-section .games-gallery img {
+  max-width: 100%;
+  height: 100%;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 200ms linear;
+}
+.games-section .games-gallery div {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.games-section .games-gallery div:hover {
+  cursor: pointer;
+}
+.games-section .games-gallery div:hover img {
+  height: 105%;
+}
+.games-section .games-gallery div:first-child {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-end: 3;
+  grid-column-end: 3;
+  position: relative;
+  overflow: hidden;
+}
+
 header {
   padding: 10px 0;
 }
 header .wrapper {
-  width: 90%;
-  max-width: 1440px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
+  padding: 10px 45px 0;
 }
 header nav {
   display: flex;
@@ -79,6 +206,11 @@ header nav .main-menu li a {
 header nav .main-menu li.active, header nav .main-menu li:hover {
   border-bottom: 3px solid var(--sunflower);
 }
+header nav .nav-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 @media screen and (min-width: 981px) {
   header .burger-btn {
     display: none;
@@ -86,12 +218,15 @@ header nav .main-menu li.active, header nav .main-menu li:hover {
 }
 
 .btn {
-  padding: 15px 30px;
+  padding: 10px 30px;
   border-radius: 30px;
   font-family: inherit;
   font-size: 20px;
   color: #fff;
   font-weight: 600;
+  text-decoration: none;
+  transition: all 300ms linear;
+  display: inline-block;
 }
 .btn a {
   text-decoration: none;
@@ -103,6 +238,19 @@ header nav .main-menu li.active, header nav .main-menu li:hover {
 }
 .btn.orange {
   background-color: var(--orange);
+  border: 2px solid var(--orange);
+}
+.btn.orange:hover {
+  background-color: #fff;
+  color: var(--orange);
+}
+.btn.ghost {
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+.btn.ghost:hover {
+  background-color: #fff;
+  color: var(--orange);
 }
 
 .hero-section {
@@ -126,17 +274,28 @@ header nav .main-menu li.active, header nav .main-menu li:hover {
   border-radius: 30px;
   transition: all 500ms linear;
   transform: scale(0.96);
+  box-shadow: 0 0 11px 58px rgba(0, 37, 166, 0.45);
+}
+.hero-section .hero-slider .swiper-slide-active {
+  z-index: 9999;
 }
 .hero-section .hero-slider .swiper-slide-active img {
   transform: scale(1);
 }
+.hero-section .hero-slider .swiper-slide-prev img {
+  transform: scale(0.9) translateX(99px);
+}
+.hero-section .hero-slider .swiper-slide-next img {
+  transform: scale(0.9) translateX(-99px);
+}
 .hero-section .hero-slider .swiper-button-next, .hero-section .hero-slider .swiper-button-prev {
   top: 50%;
   transform: translateY(-30%);
+  color: #fff !important;
 }
 .hero-section .hero-slider .swiper-button-next {
-  right: 0px;
+  right: 10px;
 }
 .hero-section .hero-slider .swiper-button-prev {
-  left: 0px;
+  left: 10px;
 }

@@ -1,9 +1,10 @@
 header{
     padding: 10px 0;
     .wrapper{
-        width: 90%;
-        max-width: 1440px;
+        width: 100%;
+        max-width: 100%;
         margin: 0 auto;   
+        padding: 10px 45px 0;
     }
     nav{
         display: flex;
@@ -51,6 +52,11 @@ header{
                     }
                 }
             }
+        }
+        .nav-btns{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
     }
     @media screen and (min-width: 981px) {
