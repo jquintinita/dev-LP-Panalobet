@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --orange: #FF4D00;
+  --blue-sky: #0085FF;
+  --purple: #FF00E5;
+  --sunflower: #FF8A00;
+  --cyan-green: #00FF85;
+  --yellow: #ffd000;
+  --blue: #0025A6;
+}
+
+body {
+  background-color: var(--blue);
+}
+
+.container {
+  max-width: 1440px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  padding: 10px 0;
+}
+header .wrapper {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav .nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0 40px;
+}
+header nav .nav-inner .nav-logo {
+  flex: 0 1 180px;
+}
+header nav .nav-inner .nav-logo a {
+  display: block;
+}
+header nav .nav-inner .nav-logo img {
+  max-width: 100%;
+  height: auto;
+}
+header nav .main-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+header nav .main-menu li {
+  list-style: none;
+  border-bottom: 3px solid transparent;
+  transition: all 200ms linear;
+  padding: 10px 0;
+}
+header nav .main-menu li a {
+  font-family: inherit;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+header nav .main-menu li.active, header nav .main-menu li:hover {
+  border-bottom: 3px solid var(--sunflower);
+}
+@media screen and (min-width: 981px) {
+  header .burger-btn {
+    display: none;
+  }
+}
+
+.btn {
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+.btn a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: inherit;
+}
+.btn a:hover {
+  text-decoration: underline;
+}
+.btn.orange {
+  background-color: var(--orange);
+}
+
+.hero-section {
+  padding: 10px 0;
+}
+.hero-section .hero-inner {
+  max-width: 100%;
+  margin: 0 auto;
+}
+.hero-section .hero-slider {
+  overflow: hidden;
+  position: relative;
+  padding: 0 45px;
+}
+.hero-section .hero-slider .hero-image {
+  padding: 0 5px;
+}
+.hero-section .hero-slider img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 30px;
+  transition: all 500ms linear;
+  transform: scale(0.96);
+}
+.hero-section .hero-slider .swiper-slide-active img {
+  transform: scale(1);
+}
+.hero-section .hero-slider .swiper-button-next, .hero-section .hero-slider .swiper-button-prev {
+  top: 50%;
+  transform: translateY(-30%);
+}
+.hero-section .hero-slider .swiper-button-next {
+  right: 0px;
+}
+.hero-section .hero-slider .swiper-button-prev {
+  left: 0px;
+}
