@@ -5,9 +5,9 @@ $(document).ready(function () {
         paginationClickable: true,
         effect: 'coverflow',
         loop: true,
-        centeredSlides: true,
+        centeredSlides: false,
         slidesPerView: 1,
-        spaceBetween: -100,
+        spaceBetween: -790,
         coverflow: {
             rotate: 0,
             stretch: 0,

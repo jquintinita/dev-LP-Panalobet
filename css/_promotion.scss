@@ -6,8 +6,8 @@
     background-size: cover;
     background-position:  center bottom;
     .promo-banners{
-        max-width: 880px;
-        width: 90%;
+        max-width: 1440px;
+        width: 100%;
         margin: 30px auto 0px;
         overflow: hidden;
         padding-bottom: 50px;
@@ -32,7 +32,7 @@
         }
         .swiper-slide img{
             max-width: 700px;
-            border-radius: 20px     ;
+            border-radius: 20px;
         }
         .swiper-container {
             margin-left: auto;
@@ -95,7 +95,10 @@
             height: 100%;
             position: relative
         }
-        
+        .swiper-slide:not(.swiper-slide-active){
+            border-radius: 30px;
+          
+        }
         .swiper-container-autoheight,
         .swiper-container-autoheight .swiper-slide {
             height: auto

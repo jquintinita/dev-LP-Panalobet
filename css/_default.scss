@@ -17,6 +17,7 @@ html{
     --cyan-green: #00FF85;
     --yellow: #ffd000;
     --blue: #0025A6;
+    --darkblue: #11055C;
 }
 
 body{
@@ -190,8 +191,51 @@ body{
     }
 }
 
+.about-section{
+    padding: 60px 0;
+}
+.blurb-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    > .blurb-box{
+        flex: 0 45%;
+        .blurb-img{
+            text-align: center;
+            img{
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
 
 
-
+.cta-banner{
+    padding: 60px 0;
+    background: url(/images/footer-social-bg.png) no-repeat center center;
+    background-color: var(--darkblue);
+    background-blend-mode: soft-light;
+    p{
+        line-height: 2em  !important;
+    }
+    .social-media{
+        display: flex;
+        gap: 8px;
+        a{
+            img{
+                transition: all 200ms linear;
+                filter: grayscale(0.3);
+            }
+        }
+        > a:hover{
+            img{
+                transform: scale(1.04);
+                filter: grayscale(0);
+            }
+        }
+    }
+}
 
 
