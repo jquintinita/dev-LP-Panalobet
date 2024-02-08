@@ -72,12 +72,13 @@ header{
                     flex: 0 100%;
                     display: flex;
                     order: 1;
-                    gap: 0;
-                    padding-bottom: 20px;
+                    gap: 10px;
+                    justify-content: flex-end;
+                    padding: 10px 10px 25px;
                     > a{
-                        flex: 0 50%;
+                        flex: 0 1 180px;
                         text-align: center;
-                        border-radius: 0;
+                    
                     }
                 }
                 .nav-logo{
@@ -88,6 +89,27 @@ header{
                   
                     > a{
                         flex: 0 190px;
+                    }
+                }
+            }
+            .nav-menu {
+                display: block;
+                position: absolute;
+                background: var(--darkblue);
+                width: 100%;
+                height: auto;
+                z-index: 999;
+                top: 121px;
+                right: 0;
+                height: 0;
+                overflow: hidden;
+                padding: 0;
+                transition: all 200ms linear;
+                .main-menu{
+                    flex-direction: column;
+                    padding: 20px;
+                    li{
+                        text-align: center;
                     }
                 }
             }
@@ -106,8 +128,74 @@ header{
                     transform-origin: 4px 0px;
                     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),opacity 0.55s ease;
                 }
+                &.active{
+                    span {
+                        opacity: 1;
+                        transform: rotate(45deg) translate(-7px, -15px);
+                        background: #fff;
+                    }
+                    span:nth-last-child(3){
+                        opacity: 0;
+                        transform: rotate(0deg) scale(0.2, 0.2);
+                    }
+                    span:nth-last-child(2){
+                        transform: rotate(-45deg) translate(-5px, 10px);
+                    }
+
+                }
             }
         }
+    }
+    @media screen and (max-width: 480px) {
+        .wrapper{
+            padding: 0px 0 10px;
+            nav{
+                flex-wrap: wrap;
+                .nav-inner{
+                    order: 2;
+                }
+                .nav-btns{
+                    flex: 0 100%;
+                    display: flex;
+                    order: 1;
+                    gap: 10px;
+                    justify-content: center;
+                    padding: 10px 10px 25px;
+                    > a{
+                        flex: 0 1 180px;
+                        text-align: center;
+                    
+                    }
+                }
+            }
+        }
+      
+    }
+    @media screen and (max-width: 360px) {
+        .wrapper{
+            padding: 0px 0 10px;
+            nav{
+                flex-wrap: wrap;
+                .nav-inner{
+                    order: 2;
+                }
+                .nav-btns{
+                    flex: 0 100%;
+                    display: flex;
+                    order: 1;
+                    gap: 5px;
+                    justify-content: center;
+                    padding: 10px 0px 25px;
+                    > a{
+                        flex: 0 1 146px;
+                        text-align: center;
+                        padding: 10px 10px;
+                    
+                    }
+                }
+            }
+        }
+      
     }
     @media screen and (min-width: 981px) {
         .burger-btn{

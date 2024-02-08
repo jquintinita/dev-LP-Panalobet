@@ -30,8 +30,16 @@ $(document).ready(function () {
 
 
 
-    //SMOOTH SCROLL
-
+    //Mobile Nav
+    $(".burger-btn").click(function(){
+        if($(this).hasClass('active')){
+            $(this).removeClass('active');
+            $('.nav-menu').css('height', '0');
+        }else{
+            $(this).addClass('active');
+            $('.nav-menu').css('height', 'auto');
+        }
+    })
 
 
 });
