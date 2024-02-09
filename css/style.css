@@ -19,6 +19,7 @@ html {
   --yellow: #ffd000;
   --blue: #0025A6;
   --darkblue: #11055C;
+  --topPostion: 38%;
 }
 
 body {
@@ -423,6 +424,17 @@ body {
     transform: translatey(0px);
   }
 }
+@keyframes levitate {
+  0% {
+    top: calc(var(--topPostion));
+  }
+  50% {
+    top: calc(var(--topPostion) + 15px);
+  }
+  100% {
+    top: calc(var(--topPostion));
+  }
+}
 header {
   padding: 10px 0;
   transition: all 200ms linear;
@@ -433,7 +445,7 @@ header.fixed {
   position: fixed;
   width: 100%;
   z-index: 9999;
-  background-color: var(--blue);
+  background-color: var(--darkblue);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
 }
 header .wrapper {
@@ -767,7 +779,6 @@ header nav .nav-btns {
   width: 100%;
   height: auto;
   padding: 30px;
-  overflow: hidden;
   margin-bottom: 30px;
 }
 .hero-banner .inner-wrapper {
@@ -779,6 +790,7 @@ header nav .nav-btns {
   padding: 30px 40px;
   display: flex;
   justify-content: space-between;
+  min-height: 340px;
 }
 .hero-banner .inner-wrapper .hero-copy {
   flex: 0 60%;
@@ -797,9 +809,10 @@ header nav .nav-btns {
 }
 .hero-banner .inner-wrapper .hero-img img {
   position: absolute;
-  top: 45%;
-  left: 50%;
+  top: var(--topPostion);
+  left: 42%;
   transform: translate(-50%, -50%);
+  animation: levitate 6s ease-in-out infinite;
 }
 @media screen and (max-width: 980px) {
   .hero-banner .inner-wrapper {
@@ -876,7 +889,7 @@ p a:hover {
 }
 
 h1 {
-  font-size: clamp(1.75rem, -0.75rem + 8vw, 3.75rem);
+  font-size: clamp(2.375rem, 1.5938rem + 2.5vw, 3rem);
 }
 
 h2 {

@@ -18,6 +18,7 @@ html{
     --yellow: #ffd000;
     --blue: #0025A6;
     --darkblue: #11055C;
+    --topPostion: 38%;
 }
 
 body{
@@ -431,5 +432,18 @@ body{
 	}
 	100% {
 		transform: translatey(0px);
+	}
+}
+
+
+@keyframes levitate {
+	0% {
+		top: calc(var(--topPostion));
+	}
+	50% {
+		top: calc(var(--topPostion) + 15px);
+	}
+	100% {
+		top: calc(var(--topPostion));
 	}
 }

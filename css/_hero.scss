@@ -89,8 +89,8 @@
     width: 100%;
     height: auto;
     padding: 30px;
-    overflow: hidden;
     margin-bottom: 30px;
+
     .inner-wrapper{
         border-radius: 30px;
         background-image: url(/images/wave-pattern.png);
@@ -100,6 +100,7 @@
         padding: 30px 40px;
         display: flex;
         justify-content: space-between;
+        min-height: 340px;
         .hero-copy{
             flex: 0 60%;
             padding: 40px 0;
@@ -116,9 +117,10 @@
             z-index: 1;
             img{
                 position: absolute;
-                top: 45%;
-                left: 50%;
+                top: var(--topPostion);
+                left: 42%;
                 transform: translate(-50%, -50%);
+                animation: levitate 6s ease-in-out infinite
             }
         }
         @media screen and (max-width: 980px) {
