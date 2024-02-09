@@ -23,6 +23,7 @@ html{
 body{
     background-color: var(--blue);
     color: #fff;
+  
 }
 .container{
     max-width: 1440px;
@@ -193,6 +194,8 @@ body{
 
 .about-section{
     padding: 60px 0;
+    background-color: #0025A6;
+    background-image: url(/images/pattern.png);
 }
 .blurb-gallery{
     display: flex;
@@ -383,4 +386,21 @@ body{
             }
         }
     }
+}
+
+
+
+
+
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
 }

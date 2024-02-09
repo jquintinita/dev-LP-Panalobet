@@ -1,45 +1,91 @@
 $(document).ready(function () {
-    // Swiper: Slider
-    new Swiper('.promo-slider', {
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        effect: 'coverflow',
-        loop: true,
-        centeredSlides: false,
-        slidesPerView: 1,
-        spaceBetween: -790,
-        coverflow: {
-            rotate: 0,
-            stretch: 0,
-            depth: 800,
-            modifier: 1,
-            slideShadows: false,
-        }
+    
 
-    });
-
-    new Swiper('.hero-slider', {
-        loop: true,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        slidesPerView: 1,
-        paginationClickable: true,
-        spaceBetween: 0,
-
-    });
-
-
+    $('.hero-slider .swiper-wrapper').slick({
+        slidesToShow: 1,
+        autoplay: true,
+        centerMode: true,
+        arrows: false,
+        centerPadding: "20px",
+        autoplaySpeed: 5000,
+        dots: true,
+        responsive: [
+            {
+                breakpoint: 600,
+                settings: {
+                    centerPadding: "10px",
+                }
+            }
+        ]
+      });
+          
 
     //Mobile Nav
     $(".burger-btn").click(function(){
         if($(this).hasClass('active')){
             $(this).removeClass('active');
-            $('.nav-menu').css('height', '0');
+            $('.nav-menu').css({
+                'height': '0',
+                'width': '0'
+            });
         }else{
             $(this).addClass('active');
-            $('.nav-menu').css('height', 'auto');
+            $('.nav-menu').animate({
+                "width": "100%"
+            }, 100).css("height", "auto");
         }
     })
+
+    //SCROLL
+
+    $(window).bind('scroll', function() {
+		var navHeight = $('header').height();
+		if ($(window).scrollTop() > navHeight) {
+			$('header').addClass('fixed');
+		 }
+		else {
+			$('header').removeClass('fixed');
+		 }
+	});
+
+    $('.promo-slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        centerMode: true,
+        variableWidth: true,
+        infinite: true,
+        focusOnSelect: true,
+        cssEase: 'linear',
+        touchMove: true,
+        // autoplay: true,
+        autoplaySpeed: 2000,
+        
+        responsive: [                        
+            {
+              breakpoint: 790,
+              settings: {
+                centerMode: false,
+                variableWidth: false,
+                slidesToShow: 1,
+              }
+            },
+        ]
+      });
+      
+      
+      var imgs = $('.slider img');
+      imgs.each(function(){
+        var item = $(this).closest('.item');
+        item.css({
+          'background-image': 'url(' + $(this).attr('src') + ')', 
+          'background-position': 'center',            
+          '-webkit-background-size': 'cover',
+          'background-size': 'cover', 
+        });
+        $(this).hide();
+      });
 
 
 });
