@@ -208,6 +208,19 @@ body {
   max-width: 100%;
   height: auto;
 }
+@media screen and (max-width: 980px) {
+  .blurb-gallery {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .blurb-gallery {
+    gap: 30px;
+  }
+  .blurb-gallery .blurb-box {
+    flex: 0 100%;
+  }
+}
 @media screen and (max-width: 767px) {
   .blurb-gallery {
     gap: 20px 0;
@@ -250,6 +263,9 @@ body {
   align-items: center;
   gap: 40px;
   flex-direction: row-reverse;
+}
+.flex-imgCopy.reverse {
+  flex-direction: row;
 }
 .flex-imgCopy .flex-img {
   flex: 0 1 40%;
@@ -379,6 +395,23 @@ body {
   }
 }
 
+.inner-content {
+  padding: 50px 0;
+  display: block;
+}
+.inner-content .lc-container {
+  margin-top: 60px;
+  display: block;
+}
+.inner-content .lc-container .blurb-gallery {
+  padding-top: 40px;
+}
+.inner-content .lc-container .blurb-gallery .blurb-box {
+  background-color: #001E86;
+  padding: 30px;
+  border-radius: 20px;
+}
+
 @keyframes float {
   0% {
     transform: translatey(0px);
@@ -393,6 +426,8 @@ body {
 header {
   padding: 10px 0;
   transition: all 200ms linear;
+  position: relative;
+  z-index: 9999;
 }
 header.fixed {
   position: fixed;
@@ -639,6 +674,14 @@ header nav .nav-btns {
   color: var(--blue-sky);
   background-color: #fff;
 }
+.btn.sunflower {
+  background-color: var(--sunflower);
+  border: 2px solid var(--sunflower);
+}
+.btn.sunflower:hover {
+  color: var(--sunflower);
+  background-color: #fff;
+}
 
 .hero-section {
   padding: 10px 0;
@@ -719,6 +762,100 @@ header nav .nav-btns {
   color: var(--yellow);
 }
 
+.hero-banner {
+  width: 100%;
+  height: auto;
+  padding: 30px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.hero-banner .inner-wrapper {
+  border-radius: 30px;
+  background-image: url(/images/wave-pattern.png);
+  background-position: center bottom;
+  background-size: cover;
+  background-color: #061E73;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.hero-banner .inner-wrapper .hero-copy {
+  flex: 0 60%;
+  padding: 40px 0;
+  position: relative;
+  z-index: 3;
+}
+.hero-banner .inner-wrapper .hero-copy h1 {
+  line-height: 1em;
+  margin-bottom: 30px;
+}
+.hero-banner .inner-wrapper .hero-img {
+  position: relative;
+  flex: 0 30%;
+  z-index: 1;
+}
+.hero-banner .inner-wrapper .hero-img img {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 980px) {
+  .hero-banner .inner-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-banner .inner-wrapper::after {
+    content: "";
+    width: 100%;
+    height: 300px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(0deg, rgb(0, 5, 24) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 2;
+  }
+  .hero-banner .inner-wrapper .hero-copy {
+    flex: 0 100%;
+    padding: 0px 0 40px;
+  }
+  .hero-banner .inner-wrapper .hero-img {
+    flex: 0 100%;
+    text-align: center;
+  }
+  .hero-banner .inner-wrapper .hero-img img {
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: unset;
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 480px) {
+  .hero-banner .inner-wrapper .hero-copy {
+    flex: 1;
+    padding: 20px 0 40px;
+  }
+  .hero-banner .inner-wrapper .hero-img {
+    flex: 1;
+    text-align: center;
+  }
+  .hero-banner .inner-wrapper .hero-img img {
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: unset;
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+  }
+}
+
 p {
   font-size: 18px;
   font-weight: 400;
@@ -729,9 +866,16 @@ p:last-of-type {
   margin-bottom: 20px;
   margin-top: 20px;
 }
+p a {
+  color: var(--yellow);
+  text-decoration: none;
+}
+p a:hover {
+  text-decoration: underline;
+}
 
 h1 {
-  font-size: clamp(2.875rem, 2.2917rem + 1.2153vw, 3.75rem);
+  font-size: clamp(1.75rem, -0.75rem + 8vw, 3.75rem);
 }
 
 h2 {
@@ -740,6 +884,11 @@ h2 {
 
 h3 {
   font-size: clamp(1.875rem, 1.625rem + 0.5208vw, 2.25rem);
+}
+
+h4 {
+  font-size: clamp(1.4rem, 1.2rem + 0.5208vw, 2rem);
+  margin-bottom: 30px;
 }
 
 .text-center {

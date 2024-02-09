@@ -9,6 +9,7 @@ $(document).ready(function () {
         centerPadding: "20px",
         autoplaySpeed: 5000,
         dots: true,
+        cssEase: 'linear',
         responsive: [
             {
                 breakpoint: 600,

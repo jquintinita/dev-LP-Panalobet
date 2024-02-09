@@ -7,15 +7,27 @@ p{
         margin-bottom: 20px;
         margin-top: 20px;
     }
+    a{
+        color: var(--yellow);
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
 }
 h1{
-    font-size: clamp(2.875rem, 2.2917rem + 1.2153vw, 3.75rem);
+    font-size: clamp(1.75rem, -0.75rem + 8vw, 3.75rem);
 }
 h2{
     font-size: clamp(2rem, 1.5833rem + 0.8681vw, 2.625rem);
 }
 h3{
     font-size: clamp(1.875rem, 1.625rem + 0.5208vw, 2.25rem);
+}
+
+h4{
+    font-size: clamp(1.4rem, 1.2rem + 0.5208vw, 2rem); 
+    margin-bottom: 30px;
 }
 .text-center{
     text-align: center;

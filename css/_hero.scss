@@ -82,3 +82,101 @@
        
     }
 }
+
+
+
+.hero-banner{
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    .inner-wrapper{
+        border-radius: 30px;
+        background-image: url(/images/wave-pattern.png);
+        background-position: center bottom;
+        background-size: cover;
+        background-color: #061E73;
+        padding: 30px 40px;
+        display: flex;
+        justify-content: space-between;
+        .hero-copy{
+            flex: 0 60%;
+            padding: 40px 0;
+            h1{
+                line-height: 1em;
+                margin-bottom: 30px;
+            }
+            position: relative;
+            z-index: 3;
+        }
+        .hero-img{
+            position: relative;
+            flex: 0 30%;
+            z-index: 1;
+            img{
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        @media screen and (max-width: 980px) {
+            display: flex;
+            flex-direction: column-reverse;
+            position: relative;
+            overflow: hidden;
+            &::after{
+                content: "";
+                width: 100%;
+                height: 300px;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-image: -moz-linear-gradient(0deg, rgb(0 5 24) 0%, rgba(255, 255, 255, 0) 100%);
+                background-image: -webkit-linear-gradient(0deg, rgb(0 5 24) 0%, rgba(255, 255, 255, 0) 100%);
+                background-image: linear-gradient(0deg, rgb(0 5 24) 0%, rgba(255, 255, 255, 0) 100%);
+                z-index: 2;
+                  
+            }
+            .hero-copy{
+                flex: 0 100%;
+                padding: 0px 0 40px;
+            }
+            .hero-img{
+                flex: 0 100%;
+                text-align: center;
+                img{
+                    position: relative;
+                    top: unset;
+                    left: unset;
+                    transform: unset;
+                    max-width: 500px;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .hero-copy{
+                flex: 1;
+                padding: 20px 0 40px;
+
+            }
+            .hero-img{
+                flex: 1;
+                text-align: center;
+                img{
+                    position: relative;
+                    top: unset;
+                    left: unset;
+                    transform: unset;
+                    max-width: 500px;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

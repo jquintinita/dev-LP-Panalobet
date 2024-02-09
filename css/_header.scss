@@ -1,6 +1,8 @@
 header{
     padding: 10px 0;
     transition: all 200ms linear;
+    position: relative;
+    z-index: 9999;
     &.fixed{
         position: fixed;
         width: 100%;

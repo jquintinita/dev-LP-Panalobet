@@ -212,6 +212,17 @@ body{
             }
         }
     }
+    @media  screen  and (max-width: 980px){
+        gap: 30px;
+        
+    }
+    @media  screen  and (max-width: 768px){
+        gap: 30px;
+        .blurb-box{
+            flex: 0 100%;
+        }
+        
+    }
     @media  screen  and (max-width: 767px){
         gap: 20px 0;
         .blurb-box{
@@ -258,6 +269,9 @@ body{
     align-items: center;
     gap: 40px;
     flex-direction: row-reverse;
+    &.reverse{
+        flex-direction: row;
+    }
     .flex-img{
         flex: 0 1 40%;
         img{
@@ -390,7 +404,22 @@ body{
 
 
 
-
+.inner-content{
+    padding: 50px 0;
+    display: block;
+    .lc-container{
+        margin-top: 60px;
+        display: block;
+        .blurb-gallery{
+            padding-top: 40px;
+            .blurb-box{
+                background-color: #001E86;
+                padding: 30px;
+                border-radius: 20px;
+            }
+        }
+    }
+}
 
 
 @keyframes float {
