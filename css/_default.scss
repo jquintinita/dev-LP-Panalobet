@@ -104,7 +104,7 @@ body{
 
 .games-section{
     padding: 40px 0;
-    background-image: url(/images/wave-pattern.png);
+    background-image: url(../images/wave-pattern.png);
     background-position:  center;
     background-size: cover;
     .games-gallery{
@@ -196,7 +196,7 @@ body{
 .about-section{
     padding: 60px 0;
     background-color: #0025A6;
-    background-image: url(/images/pattern.png);
+    background-image: url(../images/pattern.png);
 }
 .blurb-gallery{
     display: flex;
@@ -236,7 +236,7 @@ body{
 
 .cta-banner{
     padding: 60px 0;
-    background: url(/images/footer-social-bg.png) no-repeat center center;
+    background: url(../images/footer-social-bg.png) no-repeat center center;
     background-color: var(--darkblue);
     background-blend-mode: soft-light;
     p{
@@ -261,7 +261,7 @@ body{
 }
 .top-priority-section{
     padding: 30px 0;
-    background-image: url(/images/wave-pattern.png);
+    background-image: url(../images/wave-pattern.png);
     background-position: bottom center;
 }
 
