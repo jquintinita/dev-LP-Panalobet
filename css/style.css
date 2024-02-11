@@ -765,6 +765,9 @@ header nav .nav-btns {
 .hero-section .hero-slider .slick-next {
   right: 0px !important;
 }
+.hero-section .hero-slider .slick-dots {
+  bottom: -35px;
+}
 .hero-section .hero-slider .slick-dots button:before {
   opacity: 1;
   font-size: 40px;
@@ -1104,4 +1107,77 @@ h4 {
 .promotion-section .promo-banners .slick-dots li.slick-active button:before {
   opacity: 1;
   color: var(--yellow);
+}
+
+.promo-gallery {
+  padding-top: 40px;
+}
+.promo-gallery .promo-box {
+  background-color: #001E86;
+  padding: 0px 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.promo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.promo-gallery > .promo-box {
+  flex: 0 45%;
+}
+.promo-gallery > .promo-box .promo-thumb {
+  transition: all 200ms linear;
+}
+.promo-gallery > .promo-box .promo-img {
+  text-align: center;
+  min-height: 250px;
+  overflow: hidden;
+}
+.promo-gallery > .promo-box .promo-img img {
+  width: 100%;
+  height: auto;
+}
+.promo-gallery > .promo-box .promo-copy {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+}
+.promo-gallery > .promo-box .promo-copy h3 {
+  flex: 0 70%;
+  font-size: 24px;
+  padding-right: 20px;
+  text-align: left;
+}
+.promo-gallery > .promo-box .promo-copy a {
+  flex: 0 30%;
+  text-align: center;
+  line-height: 30px;
+}
+.promo-gallery > .promo-box:hover .promo-thumb {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+@media screen and (max-width: 980px) {
+  .promo-gallery {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .promo-gallery {
+    gap: 30px;
+  }
+  .promo-gallery .promo-box {
+    flex: 0 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .promo-gallery {
+    gap: 20px 0;
+  }
+  .promo-gallery .promo-box {
+    flex: 0 100%;
+  }
 }

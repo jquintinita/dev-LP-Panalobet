@@ -7,7 +7,7 @@ $(document).ready(function () {
         centerMode: true,
         arrows: false,
         centerPadding: "20px",
-        autoplaySpeed: 5000,
+        autoplaySpeed: 3000,
         dots: true,
         cssEase: 'linear',
         responsive: [
