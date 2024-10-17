@@ -61,6 +61,12 @@ h4{
     &.cyan-green:before{
         background-color: var(--cyan-green);
     }
+    &.red:before{
+        background-color: var(--red);
+    }
+    &.yellow:before{
+        background-color: var(--yellow);
+    }
 }
 
 
