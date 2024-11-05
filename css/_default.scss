@@ -448,3 +448,50 @@ body{
 		top: calc(var(--topPostion));
 	}
 }
+
+
+.faq-container{
+    padding-bottom: 50px; 
+    h2{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+.accordion {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    border: none;
+    background-color: #062d80;
+    margin-top: 5px;
+    color: #ffee00;
+    font-weight: 600;
+    position: relative;
+}
+.accordion::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    border: solid #ffee00;
+    border-width: 0 2px 2px 0;
+    padding: 5px;
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+}
+
+.accordion.active::after {
+    transform: rotate(-135deg);
+}
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    p{
+        color: #000;
+        font-size: 16px;
+    }
+}
